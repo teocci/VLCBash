@@ -5,7 +5,7 @@ setlocal ENABLEEXTENSIONS
 set KEY_NAME="HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\VideoLAN\VLC"
 set VALUE_NAME=InstallDir
 
-FOR /F "usebackq skip=2 tokens=1-4" %%A IN (`REG QUERY %KEY_NAME% /v %VALUE_NAME% 2^>nul`) DO (
+FOR /F "usebackq skip=2 tokens=3*" %%A IN (`REG QUERY %KEY_NAME% /v %VALUE_NAME% 2^>nul`) DO (
     set ValueName=%%A
     set ValueType=%%B
     set ValueValue=%%C %%D
