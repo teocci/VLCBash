@@ -16,7 +16,8 @@ for /f "usebackq tokens=1-2*" %%a in (`reg query "HKEY_LOCAL_MACHINE\SOFTWARE\WO
 	        @echo Value Name = !ValueName!
 	        @echo Value Type = !ValueType!
 	        @echo Value Value = !ValueValue!
-	        if not x%USER_PATH:ValueValue=%==x%USER_PATH% echo It contains !ValueValue! 
+
+	        setx path "%path%;!ValueValue!;"
 		)
     ) else (
         @echo "%KEY_NAME:"=%\%VALUE_NAME%" not found.
