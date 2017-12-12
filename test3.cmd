@@ -17,6 +17,10 @@ if defined ValueName (
     @echo Value Name = %ValueName%
     @echo Value Type = %ValueType%
     @echo Value Value = %ValueValue%
+
+    @echo Value Name = !ValueName!
+    @echo Value Type = !ValueType!
+    @echo Value Value = !ValueValue!
 ) else (
     @echo "%KEY_NAME:"=%\%VALUE_NAME%" not found.
 )
